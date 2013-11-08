@@ -52,7 +52,7 @@ The modification detail mainly consists of:
 2. stop using =:negative-preconditions=
 3. use =TOTAL-TIME= rather than =TOTAL-COST=
 
-** other stuffs
+** miscellaneous
 
 Below is an illustration of CELL-ASSEMBLY models.
 
