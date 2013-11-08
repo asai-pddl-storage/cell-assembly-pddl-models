@@ -1,0 +1,62 @@
+(define (problem barman-loop-base)
+ (:domain barman)
+ (:objects 
+     shaker1 - shaker
+     left right - hand
+     shot1 - shot
+     ingredient1 ingredient2 ingredient3 ingredient4 ingredient5 ingredient6 ingredient7 ingredient8 ingredient9 ingredient10 ingredient11 - ingredient
+     cocktail1 cocktail2 cocktail3 cocktail4 cocktail5 cocktail6 cocktail7 cocktail8 cocktail9 cocktail10 cocktail11 - cocktail
+     dispenser1 dispenser2 dispenser3 dispenser4 dispenser5 dispenser6 dispenser7 dispenser8 dispenser9 dispenser10 dispenser11 - dispenser
+     l0 l1 l2 - level
+)
+ (:init 
+  (ontable shaker1)
+  (ontable shot1)
+  (dispenses dispenser1 ingredient1)
+  (dispenses dispenser2 ingredient2)
+  (dispenses dispenser3 ingredient3)
+  (dispenses dispenser4 ingredient4)
+  (dispenses dispenser5 ingredient5)
+  (dispenses dispenser6 ingredient6)
+  (dispenses dispenser7 ingredient7)
+  (dispenses dispenser8 ingredient8)
+  (dispenses dispenser9 ingredient9)
+  (dispenses dispenser10 ingredient10)
+  (dispenses dispenser11 ingredient11)
+  (clean shaker1)
+  (clean shot1)
+  (empty shaker1)
+  (empty shot1)
+  (handempty left)
+  (handempty right)
+  (shaker-empty-level shaker1 l0)
+  (shaker-level shaker1 l0)
+  (next l0 l1)
+  (next l1 l2)
+  (cocktail-part1 cocktail1 ingredient11)
+  (cocktail-part2 cocktail1 ingredient2)
+  (cocktail-part1 cocktail2 ingredient11)
+  (cocktail-part2 cocktail2 ingredient5)
+  (cocktail-part1 cocktail3 ingredient4)
+  (cocktail-part2 cocktail3 ingredient1)
+  (cocktail-part1 cocktail4 ingredient11)
+  (cocktail-part2 cocktail4 ingredient2)
+  (cocktail-part1 cocktail5 ingredient2)
+  (cocktail-part2 cocktail5 ingredient11)
+  (cocktail-part1 cocktail6 ingredient2)
+  (cocktail-part2 cocktail6 ingredient7)
+  (cocktail-part1 cocktail7 ingredient5)
+  (cocktail-part2 cocktail7 ingredient8)
+  (cocktail-part1 cocktail8 ingredient7)
+  (cocktail-part2 cocktail8 ingredient6)
+  (cocktail-part1 cocktail9 ingredient4)
+  (cocktail-part2 cocktail9 ingredient6)
+  (cocktail-part1 cocktail10 ingredient4)
+  (cocktail-part2 cocktail10 ingredient11)
+  (cocktail-part1 cocktail11 ingredient4)
+  (cocktail-part2 cocktail11 ingredient10)
+)
+ (:goal
+  (and
+     (contains shot1 cocktail10)
+)))

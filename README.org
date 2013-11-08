@@ -1,0 +1,60 @@
+
+
+* PDDL problems used in icaps14 submission 43
+
+This repository contains a set of data (domain,problems,plans) used in
+the experiment whose results are shown in submission 43.
+
+** directory =ACP=
+
+It contains 7 directories, each corresponds to one instances of
+mass manufacturing problem.
+Each directory contains at least the following files:
+
++ domain.pddl :: a domain file.
++ p1.pddl :: a template problem.
++ p1.plan :: the best template plan obtained by solving it with Fast
+             Downward(LAMA2011). Plans were obtained easily and FD has
+             searched the entire state space.
++ p4.pddl, ... p1024.pddl :: mass manufacturing
+     problems.
++ [modelname]-SS-[MS3..]-TOTAL-[N].plan.total :: solutions obtained
+     by ACP for each N-products manufacturing problems.
+     *This is a sequential plan before the postprocessing* (minimum-slack
+     scheduler) -- our scheduler does not have a proper formatter
+     that complies the temporal plan input format of VAL-4, a PDDL+ plan validator.
+
+Additionally, =model.lisp= may contain functions to write the
+template problems. Functions used in each script are in
+=make-distances.lisp=. 
+/You can't/ actually produce the templates with them
+because of the library dependencies (my personal and public
+library is included, reference to which is a violation of anonymity,
+and others are not even public.)
+However, I decided to include
+them because the scripts are slightly documented
+while the actual pddl problems do not contain any comment.
+
+** directory =temporal=
+
+It contains the temporal versions of the domains and problems in =ACP=
+directory. They are made in order to run temporal planners =CPT=,
+=yahsp= and =DAE_yahsp= on those domains.
+They are manually and minimally changed from the original ones
+except /Barman/ (so /Barman/ is not included here).
+Barman needs no modification because those planners are
+able to interpret a cost-unaware standard STRIPS domain as a temporal
+domain with all durations set to 1.
+
+The modification detail mainly consists of:
+
+1. translate =:action-costs= -> =:durative-action=
+2. stop using =:negative-preconditions=
+3. use =TOTAL-TIME= rather than =TOTAL-COST=
+
+** other stuffs
+
+Below is an illustration of CELL-ASSEMBLY models.
+
+[[https://raw.github.com/icaps14submission43/pddl-models/master/model-3abc.png]]
+
