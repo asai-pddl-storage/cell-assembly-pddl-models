@@ -1,4 +1,14 @@
 
+(defpackage pddl.builder
+  (:use :cl
+	:guicho-utilities
+        :cl-ppcre
+        :optima
+        :optima.extra
+	:iterate
+	:alexandria
+	:guicho-a*))
+
 (in-package :pddl.builder)
 
 (defun make-bases (basenum)

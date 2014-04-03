@@ -1,6 +1,0 @@
-(do-plane part-0 planer-0 rough color-1 varnished)
-(do-plane-end part-0 planer-0 rough color-1 varnished)
-(do-grind part-0 grinder-0 smooth natural untreated untreated)
-(do-grind-end part-0 grinder-0 smooth natural untreated untreated)
-(do-immersion-varnish part-0 immersion-varnisher-0 color-0 verysmooth)
-(do-immersion-varnish-end part-0 immersion-varnisher-0 color-0 verysmooth)

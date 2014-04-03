@@ -1,9 +1,14 @@
 
 
-* PDDL problems used in icaps14 submission 43
+* CELL-ASSEMBLY domain
 
-This repository contains a set of data (domain,problems,plans) used in
-the experiment whose results are shown in submission 43.
+This repository contains a set of data (domain,problems,plans) used in [Asai2014].
+
+
++ [Asai2014] Asai, M.; Fukunaga, A: 2014. Fully Automated Cyclic Planning for Large-Scale
+  Manufacturing Domains. In /ICAPS 2014/.
+
+
 
 ** directory =ACP=
 
