@@ -6,7 +6,7 @@ This repository contains a set of data (domain,problems,plans) used in [Asai2014
 
 
 + [Asai2014] Asai, M.; Fukunaga, A: 2014. Fully Automated Cyclic Planning for Large-Scale
-  Manufacturing Domains. In /ICAPS 2014/.
+  Manufacturing Domains. In /ICAPS 2014/. [[http://guicho271828.github.io/publications/icaps14.pdf][pdf]]
 
 ** Directory =ACP=
 
