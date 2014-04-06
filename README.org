@@ -24,8 +24,8 @@ Each of problem directories contains:
 + p4.pddl, ... p1024.pddl :: mass manufacturing
      problems.
 + [modelname]-SS-[MS3..]-TOTAL-[N].plan.total :: solutions obtained by ACP for each
-     N-products manufacturing problems.  /This is a sequential plan before the
-     postprocessing/ (minimum-slack scheduler) -- our scheduler does not have a
+     N-products manufacturing problems.  This is a sequential plan before the
+     postprocessing (minimum-slack scheduler) -- our scheduler does not have a
      proper formatter that complies the temporal plan output format of VAL-4 (an
      official PDDL+ plan validator).
 
