@@ -1,0 +1,6 @@
+[submodule "aflab1"]
+	path = aflab1
+	url = https://github.com/guicho271828/aflab1.git
+[submodule "guicho-utilities"]
+	path = guicho-utilities
+	url = https://github.com/guicho271828/guicho-utilities.git
