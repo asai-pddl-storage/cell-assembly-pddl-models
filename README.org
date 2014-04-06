@@ -10,7 +10,7 @@ This repository contains a set of data (domain,problems,plans) used in [Asai2014
 
 ** Directory =ACP=
 
-It contains 5+1 directories. First 5 correspond to one instance of mass
+It contains 5+1 directories. First 5 correspond to instances of mass
 manufacturing problem. Additionally, a directory =ACP/generator= contains Common
 Lisp scripts to output those template problems.
 
@@ -24,11 +24,10 @@ Each of problem directories contains:
 + p4.pddl, ... p1024.pddl :: mass manufacturing
      problems.
 + [modelname]-SS-[MS3..]-TOTAL-[N].plan.total :: solutions obtained by ACP for each
-     N-products manufacturing problems.  *This is a sequential plan before the
-     postprocessing* (minimum-slack scheduler) -- our
-     scheduler does not have a proper formatter that complies the temporal plan
-     input format of VAL-4 (an official PDDL+ plan validator).
-
+     N-products manufacturing problems.  /This is a sequential plan before the
+     postprocessing/ (minimum-slack scheduler) -- our scheduler does not have a
+     proper formatter that complies the temporal plan output format of VAL-4 (an
+     official PDDL+ plan validator).
 
 The generator contains a function for building a random cell-assembly problem.
 However, in order to actually run the generator, a bit of work is required,
@@ -38,10 +37,10 @@ First of all, you have to obtain a conforming implementation of common lisp (suc
 as =sbcl=). You also have to install [[http://www.quicklisp.org/][quicklisp]]. After that, place this repo in
 /local-systems/ directory, =git submodule init= to obtain the dependent systems
 and =(ql:quickload :pddl.builder.cell-assembly)=.
-
-E-Mail me if you need a further guide. Common lisp nicely fits in writing PDDL
+E-Mail me if you need a further guidance. I hope more and more people are
+interested in Common Lisp because it nicely fits in writing PDDL
 files (see how the core part seems exactly like the PDDL files themselves). I think
-even non-lispers would be interested.
+even non-lispers would be interested in the code.
 
 For those who are already familier with Common Lisp: When calling =write-models-many=,
 don't forget giving the same random-state if you want to get the same problem.
