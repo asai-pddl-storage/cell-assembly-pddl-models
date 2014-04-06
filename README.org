@@ -61,6 +61,7 @@ The modification detail mainly consists of:
 ** Miscellaneous
 
 Below is an illustration of CELL-ASSEMBLY models.
+Only the brown tables are connected to the conveyor.
 
 [[https://raw.github.com/icaps14submission43/pddl-models/master/model-3abc.png]]
 
