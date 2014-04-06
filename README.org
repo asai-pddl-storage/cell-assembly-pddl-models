@@ -20,25 +20,28 @@ Each directory contains at least the following files:
 + p1.pddl :: a template problem.
 + p1.plan :: the best template plan obtained by solving it with Fast
              Downward(LAMA2011). Plans were obtained easily and FD has
-             searched the entire state space.
+             searched the entire state space in most cases.
 + p4.pddl, ... p1024.pddl :: mass manufacturing
      problems.
-+ [modelname]-SS-[MS3..]-TOTAL-[N].plan.total :: solutions obtained
-     by ACP for each N-products manufacturing problems.
-     *This is a sequential plan before the postprocessing* (minimum-slack
-     scheduler) -- our scheduler does not have a proper formatter
-     that complies the temporal plan input format of VAL-4, a PDDL+ plan validator.
++ [modelname]-SS-[MS3..]-TOTAL-[N].plan.total :: solutions obtained by ACP for each
+     N-products manufacturing problems.  *This is a sequential plan before the
+     postprocessing* (minimum-slack scheduler) -- our
+     scheduler does not have a proper formatter that complies the temporal plan
+     input format of VAL-4 (an official PDDL+ plan validator).
 
-Additionally, =model.lisp= may contain functions to write the
-template problems. Functions used in each script are in
-=make-distances.lisp=. 
-/You can't/ actually produce the templates with them
-because of the library dependencies (my personal and public
-library is included, reference to which is a violation of anonymity,
-and others are not even public.)
-However, I decided to include
-them because the scripts are slightly documented
-while the actual pddl problems do not contain any comment.
+Additionally, a directory =ACP/generator= contains
+lisp scripts to output those template problems.
+However, in order to actually run the script, a bit of work is required,
+especially if you are not familier with common lisp development environment.
+
+First of all, you have to obtain a conforming implementation of common lisp (such
+as =sbcl=). You also have to install [[http://www.quicklisp.org/][quicklisp]]. After that, place this repo in
+/local-systems/ directory, =git submodule init= to obtain the dependent systems
+and =(ql:quickload :pddl.builder.cell-assembly)=.
+
+E-Mail me if you need a further guide. Common lisp nicely fits in writing PDDL
+files (see how the core part seems exactly like the PDDL files themselves). I think
+even non-lispers would be interested.
 
 ** directory =temporal=
 
