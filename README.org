@@ -8,13 +8,13 @@ This repository contains a set of data (domain,problems,plans) used in [Asai2014
 + [Asai2014] Asai, M.; Fukunaga, A: 2014. Fully Automated Cyclic Planning for Large-Scale
   Manufacturing Domains. In /ICAPS 2014/.
 
+** Directory =ACP=
 
+It contains 5+1 directories. First 5 correspond to one instance of mass
+manufacturing problem. Additionally, a directory =ACP/generator= contains Common
+Lisp scripts to output those template problems.
 
-** directory =ACP=
-
-It contains 7 directories, each corresponds to one instances of
-mass manufacturing problem.
-Each directory contains at least the following files:
+Each of problem directories contains:
 
 + domain.pddl :: a domain file.
 + p1.pddl :: a template problem.
@@ -29,9 +29,9 @@ Each directory contains at least the following files:
      scheduler does not have a proper formatter that complies the temporal plan
      input format of VAL-4 (an official PDDL+ plan validator).
 
-Additionally, a directory =ACP/generator= contains
-lisp scripts to output those template problems.
-However, in order to actually run the script, a bit of work is required,
+
+The generator contains a function for building a random cell-assembly problem.
+However, in order to actually run the generator, a bit of work is required,
 especially if you are not familier with common lisp development environment.
 
 First of all, you have to obtain a conforming implementation of common lisp (such
@@ -43,16 +43,15 @@ E-Mail me if you need a further guide. Common lisp nicely fits in writing PDDL
 files (see how the core part seems exactly like the PDDL files themselves). I think
 even non-lispers would be interested.
 
-** directory =temporal=
+For those who are already familier with Common Lisp: When calling =write-models-many=,
+don't forget giving the same random-state if you want to get the same problem.
+
+** Directory =temporal=
 
 It contains the temporal versions of the domains and problems in =ACP=
-directory. They are made in order to run temporal planners =CPT=,
+directory. They are made in order to run temporal planners like =CPT4=,
 =yahsp= and =DAE_yahsp= on those domains.
-They are manually and minimally changed from the original ones
-except /Barman/ (so /Barman/ is not included here).
-Barman needs no modification because those planners are
-able to interpret a cost-unaware standard STRIPS domain as a temporal
-domain with all durations set to 1.
+They are manually and minimally changed from the original ones.
 
 The modification detail mainly consists of:
 
@@ -60,7 +59,7 @@ The modification detail mainly consists of:
 2. stop using =:negative-preconditions=
 3. use =TOTAL-TIME= rather than =TOTAL-COST=
 
-** miscellaneous
+** Miscellaneous
 
 Below is an illustration of CELL-ASSEMBLY models.
 

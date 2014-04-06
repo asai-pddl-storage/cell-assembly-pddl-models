@@ -1,13 +1,6 @@
 
 (in-package :pddl.builder)
 
-(defun write-model2b (max)
-  (iter (for i from 1 to max)
-	(write-model #'model2b
-		     #'(lambda (i)
-			 (format nil "model2b~a.pddl" i))
-		     i)))
-
 (defun model2b (basenum)
   (let ((bases (iter (for i below basenum)
 		     (collect

@@ -1,17 +1,17 @@
 
 (in-package :pddl.builder)
 
-(defun write-models-many (fn
-                          &key
-                          (format-control "p~4,,,'0@a.pddl")
-                          (size-list '(1 2 4 16 64 256 1024)))
-  (let ((snapshot (make-random-state)))
-    (dolist (i size-list)
-      (let ((*random-state* (make-random-state snapshot)))
-        (write-model fn
-                     #'(lambda (i)
-                         (format nil format-control i))
-                     i)))))
+(defun write-models-many (fn &key
+                               (filename-format "p~4,,,'0@a.pddl")
+                               (size-list '(1 2 4 16 64 256 1024))
+                               (random-state (make-random-state)))
+  "Usage: (write-models-many #'model2a :size-list '(1 2 3)"
+  (dolist (i size-list)
+    (let ((*random-state* (make-random-state random-state)))
+      (write-model fn
+                   #'(lambda (i)
+                       (format nil filename-format i))
+                   i))))
 
 (defun write-model (modelfn pathnamefn basenum)
   (with-open-file (s (funcall pathnamefn basenum)
