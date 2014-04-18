@@ -1,0 +1,45 @@
+
+
+
+Link: https://github.com/guicho271828/cell-assembly-pddl-models
+
+The Problem: 
+
+Cell assembling system is a system in which each worker (robot) assembles a complex
+product in a relatively small "cell" where the equipments are quickly accessible
+with minimum motion.
+Compared to the large automated production line, cell
+assembling systems suit the demand of assembling relatively small number (~100) of
+products, particularly experimental or custom-made products, because of the
+flexibility of the system. The problem arises because the assembling plan changes
+frequently. To maximize the productivity, the planner have to minimize the total makespan.
+
+Related Publications: [Asai2014] Asai, M.; Fukunaga, A: 2014. Fully Automated
+ Cyclic Planning for Large-Scale Manufacturing Domains. In ICAPS 2014. [[http://guicho271828.github.io/publications/icaps14.pdf][pdf]]
+
+PDDL Features: Sequential version: STRIPS, with negated preconditions,
+action costs and hierarchical type structure.
+Temporal version: Simple temporal STRIPS, i.e.,
+actions with durations, but using only the "conservative" fragment of
+temporal planning. (:numeric-fluents,:durative-actions)
+
+Objective: 
+Products called "bases" are assembled by robot arms in the cells.
+Each cell consists of an arm, assembling tables and machines for special
+purpose (e.g. oiling, painting).
+The objective is to minimize makespan. The temporal version encodes this
+objective directly. In the sequential version, cost is used as
+an (approximate) proxy for makespan, but a temporal plan must be
+produced by post-scheduling the sequential solution plan.
+
+Simplifications and omissions: 
+The task is focused on the efficient motion of arms. Job dependencies (e.g. attatching X should
+be done before painting Y) should be already encoded in the problem, so guessing
+the dependencies is not the task of planners.
+
+Also, the components to be picked up from trays and
+attached to bases are free (as in beer) and indistinguishable. When an arm
+picks up a part from a tray, it seems as if one part exists in two places at the
+same time i.e. (holding arm part) and also (at part tray).  However, this actually
+means that there is another part in the tray which was supplied immediately.
+
